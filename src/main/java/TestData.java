@@ -1,10 +1,6 @@
 
-/*
- * Class which contains the method to analyze
- */
+
 public class TestData {
-
-
 
     public void Complex() {
         int x= 2;
@@ -22,3 +18,4 @@ public class TestData {
 
 
 }
+
