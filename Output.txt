@@ -1,0 +1,214 @@
+digraph G{
+8 -> 9
+9 -> 11
+11 -> 18
+11 -> 12
+12 -> 15
+12 -> 13
+13 -> 24
+13 -> 15
+15 -> 24
+15 -> 18
+18 -> 21
+18 -> 19
+19 -> 24
+19 -> 21
+21 -> 24
+
+8 [label=" L# 8 int x = 3;"]
+9 [label=" L# 9 int y = 5;"]
+11 [label=" L# 11 if(x <= 2){"]
+11 [label=" L# 11 if(x <= 2){"]
+12 [label=" L# 12 if(y >= 4){"]
+12 [label=" L# 12 if(y >= 4){"]
+13 [label=" L# 13 System.out.println(`x <=2 and y >= 4`);"]
+13 [label=" L# 13 System.out.println(`x <=2 and y >= 4`);"]
+15 [label=" L# 15 System.out.println(`x <= 2 and y < 4`);"]
+15 [label=" L# 15 System.out.println(`x <= 2 and y < 4`);"]
+18 [label=" L# 18 if(y >= 4){"]
+18 [label=" L# 18 if(y >= 4){"]
+19 [label=" L# 19 System.out.println(`x > 2 and y >= 4`);"]
+19 [label=" L# 19 System.out.println(`x > 2 and y >= 4`);"]
+21 [label=" L# 21 System.out.println(`x < 2 and y < 4`);"]
+}
+digraph G{
+29 -> 30
+30 -> 32
+32 -> 35
+32 -> 33
+33 -> 40
+33 -> 35
+35 -> 38
+35 -> 36
+36 -> 40
+36 -> 38
+38 -> 40
+
+29 [label=" L# 29 int x = 4;"]
+30 [label=" L# 30 int y = 4;"]
+32 [label=" L# 32 if(x < y){"]
+32 [label=" L# 32 if(x < y){"]
+33 [label=" L# 33 System.out.println(`x < y`);"]
+33 [label=" L# 33 System.out.println(`x < y`);"]
+35 [label=" L# 35 if(y < x){"]
+35 [label=" L# 35 if(y < x){"]
+36 [label=" L# 36 System.out.println(`y < x`);"]
+36 [label=" L# 36 System.out.println(`y < x`);"]
+38 [label=" L# 38 System.out.println(`x = y`);"]
+}
+digraph G{
+45 -> 46
+46 -> 48
+48 -> 52
+48 -> 49
+49 -> 50
+50 -> 48
+50 -> 52
+
+45 [label=" L# 45 int x = 5;"]
+46 [label=" L# 46 int y = 5;"]
+48 [label=" L# 48 while(x < y){"]
+48 [label=" L# 48 while(x < y){"]
+49 [label=" L# 49 System.out.println(`x < y`);"]
+50 [label=" L# 50 ++x;"]
+50 [label=" L# 50 ++x;"]
+}
+digraph G{
+55 -> 56
+56 -> 58
+58 -> 62
+58 -> 59
+59 -> 60
+60 -> 58
+60 -> 62
+
+55 [label=" L# 55 int x = 4;"]
+56 [label=" L# 56 int y = 5;"]
+58 [label=" L# 58 while(x < y){"]
+58 [label=" L# 58 while(x < y){"]
+59 [label=" L# 59 System.out.println(`x < y`);"]
+60 [label=" L# 60 ++x;"]
+60 [label=" L# 60 ++x;"]
+}
+digraph G{
+65 -> 66
+66 -> 68
+68 -> 72
+68 -> 69
+69 -> 70
+70 -> 68
+70 -> 72
+
+65 [label=" L# 65 int x = 3;"]
+66 [label=" L# 66 int y = 5;"]
+68 [label=" L# 68 while(x < y){"]
+68 [label=" L# 68 while(x < y){"]
+69 [label=" L# 69 System.out.println(`x < y`);"]
+70 [label=" L# 70 ++x;"]
+70 [label=" L# 70 ++x;"]
+}
+digraph G{
+79 -> 82
+79 -> 80
+80 -> 84
+80 -> 82
+82 -> 84
+
+79 [label=" L# 79 if (x < 3) {"]
+79 [label=" L# 79 if (x < 3) {"]
+80 [label=" L# 80 x = 6;"]
+80 [label=" L# 80 x = 6;"]
+82 [label=" L# 82 x = 7;"]
+}
+digraph G{
+88 -> 90
+90 -> 93
+90 -> 91
+91 -> 99
+91 -> 93
+93 -> 96
+93 -> 94
+94 -> 99
+94 -> 96
+96 -> 99
+
+88 [label=" L# 88 int x = 1;"]
+90 [label=" L# 90 if (x == y) {"]
+90 [label=" L# 90 if (x == y) {"]
+91 [label=" L# 91 y = 6;"]
+91 [label=" L# 91 y = 6;"]
+93 [label=" L# 93 if (x == 8) {"]
+93 [label=" L# 93 if (x == 8) {"]
+94 [label=" L# 94 System.out.println(`x == 7`);"]
+94 [label=" L# 94 System.out.println(`x == 7`);"]
+96 [label=" L# 96 y = 1;"]
+}
+digraph G{
+104 -> 106
+106 -> 109
+106 -> 107
+107 -> 119
+107 -> 109
+109 -> 112
+109 -> 110
+110 -> 119
+110 -> 112
+112 -> 115
+112 -> 113
+113 -> 119
+113 -> 115
+115 -> 119
+115 -> 116
+116 -> 119
+
+104 [label=" L# 104 int x = 1;"]
+106 [label=" L# 106 if (x == y) {"]
+106 [label=" L# 106 if (x == y) {"]
+107 [label=" L# 107 y = 6;"]
+107 [label=" L# 107 y = 6;"]
+109 [label=" L# 109 if (x == 8) {"]
+109 [label=" L# 109 if (x == 8) {"]
+110 [label=" L# 110 y = 7;"]
+110 [label=" L# 110 y = 7;"]
+112 [label=" L# 112 if (x == 6) {"]
+112 [label=" L# 112 if (x == 6) {"]
+113 [label=" L# 113 y = 1;"]
+113 [label=" L# 113 y = 1;"]
+115 [label=" L# 115 if (x == 5) {"]
+115 [label=" L# 115 if (x == 5) {"]
+116 [label=" L# 116 y = 4;"]
+}
+digraph G{
+125 -> 127
+127 -> 129
+127 -> 133
+129 -> 127
+
+125 [label=" L# 125 int x = 3;"]
+127 [label=" L# 127 for(int i = 0; i < x; i++){"]
+127 [label=" L# 127 for(int i = 0; i < x; i++){"]
+129 [label=" L# 129 System.out.println(`i`);"]
+}
+digraph G{
+138 -> 139
+139 -> 141
+141 -> 142
+141 -> 146
+142 -> 143
+143 -> 141
+146 -> 147
+146 -> 149
+147 -> 146
+147 -> 149
+
+138 [label=" L# 138 int x= 2;"]
+139 [label=" L# 139 int y= 3;"]
+141 [label=" L# 141 for(int a = 1 , b = 3; a < 4 && b < 4; a++, b++) {"]
+141 [label=" L# 141 for(int a = 1 , b = 3; a < 4 && b < 4; a++, b++) {"]
+142 [label=" L# 142 x++;"]
+143 [label=" L# 143 y++;"]
+146 [label=" L# 146 while(x > 0 || y < 0) {"]
+146 [label=" L# 146 while(x > 0 || y < 0) {"]
+147 [label=" L# 147 x--;"]
+147 [label=" L# 147 x--;"]
+}
