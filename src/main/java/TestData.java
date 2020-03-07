@@ -5,22 +5,20 @@
 public class TestData {
 
 
-    public int IfElseIf(int y) {
 
-        int x = 1;
+    public void Complex() {
+        int x= 2;
+        int y= 3;
 
-        if (x == y) {
-            y = 6;
-        } else
-        if (x == 8) {
-            System.out.println("x == 7");
-        } else {
-            y = 1;
+        for(int a = 1 , b = 3; a < 4 && b < 4; a++, b++) {
+            x++;
+            y++;
         }
 
-        return x;
+        while(x > 0 || y < 0) {
+            x--;
+        }
     }
-
 
 
 }
