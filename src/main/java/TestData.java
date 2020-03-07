@@ -1,18 +1,26 @@
 
-
+/*
+ * Class which contains the method to analyze
+ */
 public class TestData {
 
 
+    public int IfElseIf(int y) {
 
-    public void test5() {
-        int x = 3;
-        int y = 5;
+        int x = 1;
 
-        while (x < y) {
-            System.out.println("x < y");
-            ++x;
+        if (x == y) {
+            y = 6;
+        } else
+        if (x == 8) {
+            System.out.println("x == 7");
+        } else {
+            y = 1;
         }
+
+        return x;
     }
 
-}
 
+
+}

@@ -47,29 +47,8 @@ public class nsss {
                 if (!(abstractInsnNode == null && abstractInsnNode.getNext() == null)) {
 
 
-                    if (abstractInsnNode.getType() == AbstractInsnNode.JUMP_INSN) {
-                        AbstractInsnNode tmp = abstractInsnNode;
-                        while (tmp.getType() != AbstractInsnNode.LINE) {
-                            if (tmp == null || tmp.getPrevious() == null)
-                                break;
-                            tmp = tmp.getPrevious();
-
-                        }
-                        if (tmp.getType() == AbstractInsnNode.LINE) {
-                            System.out.print(((LineNumberNode) tmp).line + " -> ");
-                        }
-                        JumpInsnNode jump = (JumpInsnNode) abstractInsnNode;
-
-
-                        System.out.println(((LineNumberNode) (jump.label.getNext())).line);
-
-                        if (tmp.getType() == AbstractInsnNode.LINE) {
-                            System.out.print(((LineNumberNode) tmp).line + " -> ");
-                            System.out.println(((LineNumberNode) jump.getNext().getNext()).line);
-                        }
-
-
-                    }
+                    jumpRelations(abstractInsnNode);
+                    insnRelations(abstractInsnNode);
 
 
                 }
@@ -78,6 +57,65 @@ public class nsss {
         }
     }
 
+    private static void jumpRelations(AbstractInsnNode abstractInsnNode) {
+        if (abstractInsnNode.getType() == AbstractInsnNode.JUMP_INSN) {
+            AbstractInsnNode tmp = abstractInsnNode;
+            while (tmp.getType() != AbstractInsnNode.LINE) {
+                if (tmp == null || tmp.getPrevious() == null)
+                    break;
+                tmp = tmp.getPrevious();
+
+            }
+            if (tmp.getType() == AbstractInsnNode.LINE) {
+                System.out.print(((LineNumberNode) tmp).line + " -> ");
+                System.out.println(((LineNumberNode) (((JumpInsnNode) abstractInsnNode).label.getNext())).line);
+            }
+
+
+
+
+
+            if (tmp.getType() == AbstractInsnNode.LINE) {
+                System.out.print(((LineNumberNode) tmp).line + " -> ");
+                System.out.print(((LineNumberNode) abstractInsnNode.getNext().getNext()).line+"\n");
+            }
+
+
+        }
+    }
+    private static void insnRelations(AbstractInsnNode abstractInsnNode) {
+        if (abstractInsnNode.getType() == AbstractInsnNode.INSN) {
+
+            AbstractInsnNode backward = abstractInsnNode;
+            AbstractInsnNode forward = abstractInsnNode;
+            while (backward.getType() != AbstractInsnNode.LINE) {
+                if (backward == null || backward.getPrevious() == null)
+                    break;
+                backward = backward.getPrevious();
+
+            }
+            while (forward.getType() != AbstractInsnNode.LINE) {
+                if (forward == null || forward.getNext() == null)
+                    break;
+                forward = forward.getNext();
+
+            }
+
+
+            if (forward.getType() == AbstractInsnNode.LINE) {
+                System.out.print(((LineNumberNode) backward).line + " -> ");
+                System.out.print(((LineNumberNode) forward).line + "\n");
+
+            }
+
+
+
+
+
+
+
+        }
+    }
 
     private static String getId(Object object) {
         if (sIds == null) {
